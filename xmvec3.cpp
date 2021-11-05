@@ -18,6 +18,8 @@ ostream& XM_CALLCONV operator << (ostream& os, FXMVECTOR v)
     return os;
 }
 
+//we
+
 int main()
 {
     cout.setf(ios_base::boolalpha);
@@ -28,6 +30,9 @@ int main()
         cout << "directx math not supported" << endl;
         return 0;
     }
+
+
+    XMVECTOR Vr = { 1.0F,1.0F,1.0F};
 
     XMVECTOR n = XMVectorSet(1.0f, 0.0f, 0.0f, 0.0f);
     XMVECTOR u = XMVectorSet(1.0f, 2.0f, 3.0f, 0.0f);
@@ -66,7 +71,7 @@ int main()
 
     // The angle between projW and perpW should be 90 degrees.
     XMVECTOR angleVec = XMVector3AngleBetweenVectors(projW, perpW);
-    float angleRadians = XMVectorGetX(angleVec);
+    float angleRadians = XMVectorGetY(angleVec);
     float angleDegrees = XMConvertToDegrees(angleRadians);
 
     cout << "u                   = " << u << endl;
@@ -85,6 +90,12 @@ int main()
     cout << "projW + perpW == w  = " << equal << endl;
     cout << "projW + perpW != w  = " << notEqual << endl;
     cout << "angle               = " << angleDegrees << endl;
+    XMFLOAT3 F3;
+    XMFLOAT4 F4;
+    cout << XM_PI << endl;
+    
+
+
 
     return 0;
 }
